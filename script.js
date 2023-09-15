@@ -20,13 +20,17 @@ function writePassword() {
         var lcprompt = prompt("Would you like to include lowercase characters? Y/N");
         if (lcprompt == "n"){
           lowercase = "";
-        }   
+        }  else if (lcprompt == "y"){
+          lowercase = "abcdefghijklmnopqrstuvwxyz"
+        }
         askquestion2()
       }
       function askquestion2() {
         var ucprompt = prompt("Would you like to include uppercase letters? Y/N");
         if (ucprompt == "n"){
           uppercase = "";
+        } else if (ucprompt == "y") {
+          uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         }
         askquestion3()
       }
@@ -34,6 +38,8 @@ function writePassword() {
         var scprompt = prompt("Would you like to include special characters? Y/N");
         if (scprompt == "n"){
           specialchars = "";
+        } else if (scprompt == "y"){
+          specialchars = "!@#$%?&"
         }
         askquestion4()
       } 
@@ -41,6 +47,8 @@ function writePassword() {
         var pnprompt = prompt("Would you like to include numbers? Y/N");
         if (pnprompt == "n"){
           passnumbers = ""
+        } else if (pnprompt == "y"){
+          passnumbers = "1234567890"
         }
         var passpreference = lowercase + uppercase + specialchars + passnumbers
         function generatePassword(){
